@@ -29,9 +29,19 @@
     <script>
         let btn = document.getElementById('toggleBtn')
         let bulb = document.getElementById('bulb')
+        let on = false
         btn.addEventListener('click', toggleBulb)
         function toggleBulb(e) {
-           bulb.src = "img/bulb-on.jpg"
+            on = !on;
+
+            if (on) {
+                bulb.src = "img/bulb-on.jpg"
+                btn.innerHTML = "Turn OFF"
+            } else {
+                bulb.src = "img/bulb-off.jpg"
+                btn.innerHTML = "Turn ON"
+            }
+
         }
         // btn.addEventListener('click',function(){
         //     bulb.src = "img/bulb-on.jpg"
